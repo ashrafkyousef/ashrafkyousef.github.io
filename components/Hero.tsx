@@ -96,7 +96,7 @@ export default function Hero() {
           </div>
 
           <Reveal delay={200} className="order-first lg:order-none">
-            <div className="relative mx-auto max-w-[15rem] xs:max-w-[17rem] sm:max-w-xs lg:max-w-none">
+            <div className="relative mx-auto max-w-[15rem] xs:max-w-[17rem] sm:max-w-xs lg:max-w-[21rem]">
               <div
                 aria-hidden="true"
                 className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-amber/25 via-violet/10 to-transparent blur-xl"
@@ -110,7 +110,7 @@ export default function Hero() {
                   width={659}
                   height={1014}
                   priority
-                  sizes="(min-width: 1024px) 30rem, (min-width: 640px) 20rem, 17rem"
+                  sizes="(min-width: 1024px) 21rem, (min-width: 640px) 20rem, 17rem"
                   className="h-full w-full object-cover object-[50%_18%] lg:object-center"
                 />
                 <div
