@@ -15,7 +15,7 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
-const siteUrl = "https://ashrafkyousef.netlify.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ashrafkypallam-cloud.github.io";
 const description =
   "Ashraf K Yousef — Assistant Bar Manager in Dubai with 11+ years UAE hospitality experience. Beverage cost control, team leadership, digital tools and AI-driven operational analysis.";
 

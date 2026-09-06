@@ -1,5 +1,6 @@
 import { ArrowUpRight, Download } from "lucide-react";
 import { contact, contactLinks, profile } from "@/lib/content";
+import { withBasePath } from "@/lib/basePath";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
@@ -78,7 +79,7 @@ export default function Contact() {
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
-                  href={contact.cv}
+                  href={withBasePath(contact.cv)}
                   download
                   className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-medium text-paper transition-colors hover:border-amber/45 hover:bg-surface"
                 >

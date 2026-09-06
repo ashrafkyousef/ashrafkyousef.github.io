@@ -45,10 +45,10 @@ export const navLinks: { href: string; label: string }[] = [
 ];
 
 export const venues: { name: string; logo: string; width: number; height: number }[] = [
-  { name: "Bla Bla Dubai by McGettigan's", logo: "/assets/logo-blabla.png", width: 773, height: 685 },
-  { name: "Mandarin Oriental Jumeira Dubai", logo: "/assets/logo-mandarin.png", width: 1241, height: 1096 },
-  { name: "Radisson Blu Hotel Dubai Media City", logo: "/assets/logo-radisson.png", width: 1608, height: 496 },
-  { name: "Nara Desert Escape", logo: "/assets/logo-nara.png", width: 1195, height: 1173 },
+  { name: "Bla Bla Dubai by McGettigan's", logo: "/assets/logo-blabla.png", width: 220, height: 195 },
+  { name: "Mandarin Oriental Jumeira Dubai", logo: "/assets/logo-mandarin.png", width: 220, height: 194 },
+  { name: "Radisson Blu Hotel Dubai Media City", logo: "/assets/logo-radisson.png", width: 220, height: 68 },
+  { name: "Nara Desert Escape", logo: "/assets/logo-nara.png", width: 220, height: 216 },
 ];
 
 export const about = {

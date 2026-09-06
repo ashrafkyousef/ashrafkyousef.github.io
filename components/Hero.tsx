@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
 import { contact, profile, stats, venues } from "@/lib/content";
+import { withBasePath } from "@/lib/basePath";
 import Reveal from "./Reveal";
 
 export default function Hero() {
@@ -65,7 +66,7 @@ export default function Hero() {
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
                 <a
-                  href={contact.cv}
+                  href={withBasePath(contact.cv)}
                   download
                   className="inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-medium text-paper transition-colors hover:border-amber/45 hover:bg-surface"
                 >
