@@ -33,14 +33,14 @@ export default function About() {
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="relative overflow-hidden rounded-[1.5rem] border border-line bg-surface">
+            <div className="relative h-full min-h-64 overflow-hidden rounded-[1.5rem] border border-line bg-surface">
               <Img
                 src={about.image}
                 alt="Ashraf K Yousef working behind a high-volume bar in Dubai"
                 width={1371}
                 height={771}
                 sizes="(min-width: 1024px) 34rem, 92vw"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-[50%_40%]"
               />
               <div
                 aria-hidden="true"
