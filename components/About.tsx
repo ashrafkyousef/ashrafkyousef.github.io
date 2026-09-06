@@ -32,7 +32,11 @@ export default function About() {
             </figure>
           </Reveal>
 
-          <Reveal delay={120}>
+          {/* Body text carries ~9px above its cap height (5px half-leading +
+              4.2px ascent gap), so a box-aligned image reads as sitting high.
+              Inset the top to match the first line optically; the bottom keeps
+              aligning to the quote card's real border edge. */}
+          <Reveal delay={120} className="lg:pt-[9px]">
             <div className="relative h-full min-h-64 overflow-hidden rounded-[1.5rem] border border-line bg-surface">
               <Img
                 src={about.image}
