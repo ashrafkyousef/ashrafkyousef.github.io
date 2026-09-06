@@ -97,7 +97,6 @@ export default function Contact() {
           <p>
             {profile.name} — {profile.role}, {profile.location}
           </p>
-          <p>&copy; {new Date().getFullYear()} · Built with Next.js &amp; Tailwind CSS</p>
         </div>
       </footer>
     </section>
