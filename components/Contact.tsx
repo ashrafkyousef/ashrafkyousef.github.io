@@ -93,11 +93,9 @@ export default function Contact() {
       </div>
 
       <footer className="container-page relative mt-20 border-t border-line-soft pt-8">
-        <div className="flex flex-col items-start justify-between gap-4 text-[0.8rem] text-paper-faint sm:flex-row sm:items-center">
-          <p>
-            {profile.name} — {profile.role}, {profile.location}
-          </p>
-        </div>
+        <p className="text-center text-[0.8rem] text-paper-faint">
+          {profile.name} — {profile.role}, {profile.location}
+        </p>
       </footer>
     </section>
   );
