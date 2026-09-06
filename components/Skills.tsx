@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Img from "./Img";
 import { Award, Check, ChevronRight, Code2 } from "lucide-react";
 import {
   aiNote,
@@ -98,7 +98,7 @@ export default function Skills() {
                 <Reveal delay={i * 90}>
                   <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-line-soft bg-surface/50">
                     <div className="relative aspect-[16/10] overflow-hidden border-b border-line-soft bg-ink">
-                      <Image
+                      <Img
                         src={tool.image}
                         alt={`${tool.title} interface`}
                         fill
@@ -193,7 +193,7 @@ export default function Skills() {
             <Reveal delay={90}>
               <article className="flex h-full flex-col gap-5 rounded-2xl border border-line-soft bg-surface/50 p-6 sm:flex-row sm:p-7">
                 <div className="relative aspect-[900/637] w-full shrink-0 overflow-hidden rounded-xl border border-line-soft sm:w-40">
-                  <Image
+                  <Img
                     src={certification.image}
                     alt={`${certification.title} certificate`}
                     fill

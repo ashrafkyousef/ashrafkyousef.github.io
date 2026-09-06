@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Img from "./Img";
 import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
 import { contact, profile, stats, venues } from "@/lib/content";
 import { withBasePath } from "@/lib/basePath";
@@ -104,7 +104,7 @@ export default function Hero() {
               {/* Cropped to a compact portrait on phones so the name stays above
                   the fold; falls back to the image's own ratio from lg up. */}
               <div className="relative aspect-4/5 overflow-hidden rounded-[1.75rem] border border-line bg-surface lg:aspect-auto">
-                <Image
+                <Img
                   src={profile.portrait}
                   alt={`${profile.name}, ${profile.role}`}
                   width={659}
@@ -132,7 +132,7 @@ export default function Hero() {
               <ul className="flex w-max animate-marquee items-center gap-12 pr-12 sm:gap-16 sm:pr-16">
                 {[...venues, ...venues].map((venue, i) => (
                   <li key={`${venue.name}-${i}`} className="shrink-0">
-                    <Image
+                    <Img
                       src={venue.logo}
                       alt={i < venues.length ? venue.name : ""}
                       aria-hidden={i >= venues.length}

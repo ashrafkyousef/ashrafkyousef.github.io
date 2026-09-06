@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Img from "./Img";
 import { Quote } from "lucide-react";
 import { about, roles } from "@/lib/content";
 import Reveal from "./Reveal";
@@ -34,7 +34,7 @@ export default function About() {
 
           <Reveal delay={120}>
             <div className="relative overflow-hidden rounded-[1.5rem] border border-line bg-surface">
-              <Image
+              <Img
                 src={about.image}
                 alt="Ashraf K Yousef working behind a high-volume bar in Dubai"
                 width={1371}
