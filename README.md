@@ -1,8 +1,9 @@
 # Ashraf K Yousef — Portfolio
 
-Single-page portfolio for Ashraf K Yousef, Assistant Bar Manager / Beverage
-Operations Specialist (Dubai, UAE). Rebuilt from the previous static site at
-`ashrafkyousef.netlify.app` — all copy, imagery and the CV were carried across.
+Single-page portfolio for Ashraf K Yousef, Assistant Bar Manager,
+with Assistant Bar Manager / Head Bartender / Bar Supervisor positioning (Dubai, UAE).
+
+Website: https://ashrafkyousef.github.io/
 
 ## Stack
 
@@ -29,12 +30,14 @@ app/
   globals.css    Theme tokens, base type, reveal + marquee keyframes
 components/
   Nav.tsx        Sticky header, scroll-spy, mobile sheet   (client)
-  Hero.tsx       Name, hook, stats, venue marquee
-  About.tsx      Bio, philosophy, roles open to
-  Experience.tsx Timeline, turnaround case study, pre-opening, competitions
-  Skills.tsx     6-pillar system, competencies, digital tools, applied AI
+  Hero.tsx       Introduction, CV link, stats, venue logos
+  About.tsx      Short bio and working philosophy
+  Results.tsx    CV-aligned beverage cost and operational responsibilities
+  Experience.tsx Exact role dates, career break and pre-opening exposure
+  Tools.tsx      Hospitality systems and digital operations
+  Skills.tsx     Core skills, education, certifications and languages
   Contact.tsx    Contact links, CTA, footer
-  Reveal.tsx     IntersectionObserver fade-in          (client)
+  Reveal.tsx     Server-rendered content wrapper
   icons.tsx      LinkedIn glyph (lucide v1 dropped brand marks)
 lib/content.ts   All copy and data — edit here, not in components
 public/assets/   Portrait, venue logos, tool screenshots, CV PDF
@@ -43,8 +46,8 @@ public/assets/   Portrait, venue logos, tool screenshots, CV PDF
 ## Editing content
 
 Everything the page renders comes from [`lib/content.ts`](lib/content.ts):
-bio, timeline, stats, pillars, tools, contact details. Components only handle
-layout, so copy changes never require touching JSX.
+bio, timeline, stats, operating responsibilities, systems, qualifications and
+contact details. Section headings and presentation copy also live in components.
 
 ## Theming
 
@@ -53,35 +56,36 @@ Colour, font and spacing tokens live in the `@theme` block at the top of
 with an amber accent (`--color-amber`). Change a token there and it propagates
 to every `bg-ink`, `text-amber`, `border-line` utility across the site.
 
-## Deploying (Netlify)
+## Deploying (GitHub Pages)
 
-`netlify.toml` is configured for the **Netlify Next.js Runtime v5**, which turns
-the Next build into static assets plus one server function, and routes
-`next/image` requests to the Netlify Image CDN. Node is pinned to 22 via
-`NODE_VERSION` and `.nvmrc`.
+The website is hosted at https://ashrafkyousef.github.io/.
+The `.github/workflows/deploy.yml` workflow builds and deploys the static
+export to GitHub Pages when changes are pushed to `main`, or when manually
+triggered in GitHub Actions.
 
-Verified locally with `netlify build --offline`: the runtime accepts Next 16,
-the page and all assets serve, and the server handler bundles. The
-`/_next/image` path can only be exercised on a real deploy — the local emulator
-does not implement `/.netlify/images`.
-
-**The live site at `ashrafkyousef.netlify.app` is still served from
-`../portfolio-clean` and is untouched by any of this.** To preview this build
-without affecting it, deploy it as a *separate* Netlify site first:
-
-```bash
-netlify init          # create a NEW site — do not link to the existing one
-netlify deploy --build   # draft URL, production untouched
-netlify deploy --build --prod   # only once the draft looks right
-```
-
-Point the `ashrafkyousef.netlify.app` name at the new site only after the draft
-checks out.
+`next.config.ts` enables static export and disables server image optimisation.
+The user site is served from the root, so no base path is needed. The default
+site URL in `app/layout.tsx` is `https://ashrafkyousef.github.io`.
+If the repository defines `NEXT_PUBLIC_SITE_URL`, keep it set to this address.
 
 ## Notes
 
-- Scroll-reveal is progressive: content renders visible, and is only hidden for
-  animation once the inline `js` class lands on `<html>`. No JS, no blank page.
-- `prefers-reduced-motion` disables reveals, the logo marquee and smooth scroll.
+- Content is visible immediately without JavaScript or scroll animations.
+- `prefers-reduced-motion` disables smooth scrolling and decorative transitions.
 - `next.config.ts` pins `turbopack.root` because the project sits below an
   unrelated parent lockfile.
+
+## CV source and content scope
+
+The downloadable PDF is the final uploaded `Ashraf Yousef_Asst Manager_CV .pdf`,
+reviewed on 1 October 2026, preserved without rewriting the document.
+
+Use 11 years UAE hospitality experience, beverage cost around 21%, and
+approximately 20–25 bar team members coordinated during peak shifts.
+Bla Bla dates: Bartender Jan–Oct 2021; Floor Supervisor Oct 2021–Nov 2022;
+Assistant Bar Manager Nov 2022–Dec 2025. Nara ends in March 2020.
+
+Do not reintroduce unsupported commercial ownership, staff totals, turnaround
+metrics, supplier negotiation, budget ownership, competition claims or project
+outcomes. Education, systems and responsibilities must remain grounded in the CV.
+The social preview uses `public/assets/cv-aligned-social.png`.

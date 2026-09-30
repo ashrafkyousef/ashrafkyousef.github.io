@@ -1,5 +1,5 @@
 import { ArrowUpRight, Download } from "lucide-react";
-import { contact, contactLinks, profile } from "@/lib/content";
+import { contact, contactLinks, profile, roles } from "@/lib/content";
 import { withBasePath } from "@/lib/basePath";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative scroll-mt-24 overflow-hidden border-t border-line-soft bg-ink-2/60 py-20 sm:py-28"
+      className="relative section-space overflow-hidden border-t border-line-soft bg-ink-2/60"
     >
       <div
         aria-hidden="true"
@@ -43,7 +43,7 @@ export default function Contact() {
                         <span className="block text-[0.7rem] uppercase tracking-[0.16em] text-paper-faint">
                           {link.label}
                         </span>
-                        <span className="mt-0.5 block truncate text-[0.95rem] text-paper transition-colors group-hover:text-amber">
+                        <span className="mt-0.5 block break-words text-[0.95rem] text-paper transition-colors group-hover:text-amber">
                           {link.value}
                         </span>
                       </span>
@@ -62,12 +62,14 @@ export default function Contact() {
             <div className="flex h-full flex-col justify-between gap-8 rounded-2xl border border-amber/20 bg-gradient-to-br from-surface to-ink-2 p-7 sm:p-8">
               <div>
                 <p className="font-display text-2xl leading-snug text-paper sm:text-[1.6rem]">
-                  Ready for strategic operational leadership.
+                  Available for your next bar team.
                 </p>
                 <p className="mt-4 text-[0.95rem] leading-relaxed text-paper-dim">
-                  Bringing 11+ years of UAE high-volume mastery, disciplined cost governance, and
-                  scalable digital systems to forward-thinking hospitality groups.
+                  Hands-on bar operations, team coordination, cost control, and guest service.
                 </p>
+                <ul className="mt-5 space-y-2 text-sm text-amber-soft">
+                  {roles.map((role) => <li key={role}>{role}</li>)}
+                </ul>
               </div>
 
               <div className="flex flex-col gap-3 xs:flex-row">
@@ -84,7 +86,7 @@ export default function Contact() {
                   className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-medium text-paper transition-colors hover:border-amber/45 hover:bg-surface"
                 >
                   <Download className="h-4 w-4" />
-                  Resume
+                  Download CV
                 </a>
               </div>
             </div>

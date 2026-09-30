@@ -1,62 +1,47 @@
 import {
-  BarChart3,
-  Boxes,
-  BrainCircuit,
-  Building2,
-  ClipboardList,
-  Cpu,
-  GlassWater,
-  Mail,
-  MapPin,
-  MessageCircle,
-  Phone,
-  Sparkles,
-  Target,
-  TrendingUp,
-  Trophy,
-  Users,
-  Wrench,
+  Boxes, ClipboardList, GlassWater, Mail, MapPin, MessageCircle,
+  Phone, Sparkles, Users, Wrench,
 } from "lucide-react";
 import { LinkedInIcon, type IconType } from "@/components/icons";
 
+// Career facts and scope are aligned to the uploaded final CV, reviewed 1 October 2026.
 export const profile = {
   name: "Ashraf K Yousef",
   role: "Assistant Bar Manager",
-  discipline: "Beverage Operations Specialist",
+  discipline: "Beverage Operations | Bar Leadership",
   location: "Dubai, UAE",
-  kicker: "Beverage Operations & Bar Leadership",
-  hook: "A decade of beverage craftsmanship, evolved into scalable operational leadership.",
-  summary:
-    "Directing multi-outlet, high-volume beverage operations across Dubai's luxury and entertainment sectors. Focused on profitability, data-backed inventory control, team development, and elevated guest experiences.",
+  hook: "Hands-on service. Clear standards. Strong teams.",
+  summary: "Assistant Bar Manager with 11 years of UAE hospitality experience across high-volume lifestyle venues, luxury hotels, and premium dining operations. Experienced in bar operations, team leadership, beverage cost control, inventory management, staff training, and guest recovery.",
+  availability: "Immediately available · Dubai, UAE",
   portrait: "/assets/portrait.jpg",
 };
 
-export const stats: { value: string; label: string }[] = [
-  { value: "11+", label: "Years UAE Hospitality" },
-  { value: "44", label: "Team Members Led" },
-  { value: "18–24%", label: "Beverage COGS Maintained" },
+export const stats = [
+  { value: "11", label: "Years of UAE hospitality experience" },
+  { value: "~21%", label: "Beverage cost maintained" },
+  { value: "~20–25", label: "Bar team members coordinated during peak shifts" },
 ];
 
-export const navLinks: { href: string; label: string }[] = [
-  { href: "#about", label: "About" },
+export const navLinks = [
+  { href: "#results", label: "Bar operations" },
   { href: "#experience", label: "Experience" },
-  { href: "#skills", label: "Skills" },
-  { href: "#contact", label: "Contact" },
+  { href: "#tools", label: "Systems" },
+  { href: "#skills", label: "Qualifications" },
+  { href: "#about", label: "About" },
 ];
 
-export const venues: { name: string; logo: string; width: number; height: number }[] = [
-  { name: "Bla Bla Dubai by McGettigan's", logo: "/assets/logo-blabla.png", width: 220, height: 195 },
+export const venues = [
+  { name: "Bla Bla By McGettigan's", logo: "/assets/logo-blabla.png", width: 220, height: 195 },
   { name: "Mandarin Oriental Jumeira Dubai", logo: "/assets/logo-mandarin.png", width: 220, height: 194 },
   { name: "Radisson Blu Hotel Dubai Media City", logo: "/assets/logo-radisson.png", width: 220, height: 68 },
   { name: "Nara Desert Escape", logo: "/assets/logo-nara.png", width: 220, height: 216 },
 ];
 
 export const about = {
-  heading: "From craftsmanship to operational leadership",
+  heading: "Bar craft, built into everyday leadership.",
   paragraphs: [
-    "Over a decade scaling beverage operations across Dubai's luxury dining destinations, world-class entertainment venues, and hotel pre-openings — from the bar rail to full commercial ownership of a multi-outlet programme.",
-    "My work sits where floor execution meets fiscal rigour: recipe engineering and batching standards on one side, COGS governance and variance auditing on the other. I lead teams of up to 44 and build the systems — SOPs, digital tools, AI-assisted analysis — that keep standards consistent when volume peaks.",
-    "I also build practical software for the trade: an interactive recipe knowledge base and a cocktail costing engine, both designed to eliminate recipe drift and automate margin engineering.",
+    "My experience spans hotel bars, luxury desert dining, pre-opening teams, and high-volume lifestyle venues in Dubai. At Bla Bla By McGettigan's, I progressed from Bartender to Floor Supervisor to Assistant Bar Manager.",
+    "I focus on the details that keep service running: clear briefings, well-prepared stations, consistent recipes, accurate stock records, and practical team coaching. I work closely with floor, reception, and kitchen teams to resolve problems and support the guest experience.",
   ],
   philosophy: "Own your station. Own your standards. Own your results.",
   image: "/assets/action-photo.jpg",
@@ -67,358 +52,115 @@ export type TimelineEntry = {
   venue: string;
   role: string;
   description: string;
-  progression?: string[];
-  current?: boolean;
+  progression?: { period: string; role: string; body: string }[];
+  mostRecent?: boolean;
 };
 
 export const timeline: TimelineEntry[] = [
   {
-    period: "Jun 2021 – Dec 2025",
-    venue: "Bla Bla Dubai by McGettigan's",
-    role: "Assistant Bar Manager",
-    description:
-      "Rapid progression to Assistant Bar Manager — leading 44 staff and managing 18–24% COGS across high-volume bars.",
-    progression: ["2021 — Bartender", "2021–2023 — Floor Supervisor", "2023–2025 — Assistant Bar Manager"],
-    current: true,
+    period: "Jan 2021 – Dec 2025",
+    venue: "Bla Bla By McGettigan's, Dubai, UAE",
+    role: "Bartender → Floor Supervisor → Assistant Bar Manager",
+    description: "Progressed from pre-opening beverage service to floor supervision and supporting daily high-volume bar operations.",
+    mostRecent: true,
+    progression: [
+      {
+        period: "Jan 2021 – Oct 2021", role: "Bartender · Pre-Opening",
+        body: "Prepared and served beverages to standard recipes and portion controls. Maintained mise-en-place, stock replenishment, and equipment readiness; supported stock counts and opening and closing routines.",
+      },
+      {
+        period: "Oct 2021 – Nov 2022", role: "Floor Supervisor",
+        body: "Supervised floor operations across two outlets, including staff deployment, section allocation, service flow, guest recovery, and team breaks. Led briefings and supported shift handovers and staff coaching; took additional floor responsibility when the Floor Manager was unavailable.",
+      },
+      {
+        period: "Nov 2022 – Dec 2025", role: "Assistant Bar Manager",
+        body: "Supported daily bar operations, coordinating approximately 20–25 bar team members during peak shifts. Maintained beverage cost at around 21%; led training and briefings, managed stock controls, planned weekly rosters, supported costing and pricing recommendations, and handled guest recovery.",
+      },
+    ],
   },
   {
-    period: "Dec 2019 – Mar 2021",
-    venue: "Nara Desert Escape",
+    period: "Dec 2019 – Mar 2020",
+    venue: "Nara Desert Escape, Dubai, UAE",
     role: "Head Bartender · Pre-Opening",
-    description:
-      "Directed bar operations and logistics for high-end bespoke desert dining; oversaw cocktail prep standards, staff onboarding, and variance control.",
+    description: "Supported pre-opening bar setup, equipment readiness, stock preparation, recipe standards, and service procedures. Led day-to-day bar operations for luxury desert dining and private events; managed stock levels, internal requisitions, par levels, rotation, and wastage control.",
   },
   {
     period: "Jan 2019 – Nov 2019",
-    venue: "Tasca by José Avillez, Mandarin Oriental Jumeira",
-    role: "Pre-Opening Team / Bartender",
-    description:
-      "Executed luxury pre-opening beverage setups, cocktail standards, and service sequences for a flagship fine-dining concept.",
+    venue: "Tasca by José Avillez, Mandarin Oriental Jumeira, Dubai, UAE",
+    role: "Bartender · Pre-Opening",
+    description: "Supported bar setup, station organisation, equipment readiness, stock preparation, and service standards. Prepared beverages to recipe specifications and luxury service expectations; supported inventory counts, stock rotation, and opening and closing procedures.",
   },
   {
     period: "Feb 2015 – Nov 2018",
-    venue: "Radisson Blu Hotel, Dubai Media City",
+    venue: "Radisson Blu Hotel Dubai Media City, Dubai, UAE",
     role: "Bartender",
-    description:
-      "Delivered foundational high-volume beverage service, POS order-flow discipline, mise-en-place standards, and bar inventory rotation within a premier corporate hotel environment.",
+    description: "Prepared and served beverages across Icon Bar and Tamanya Goes Thai. Maintained mise-en-place, cleanliness, stock replenishment, and equipment readiness; supported inventory counts, stock rotation, opening and closing procedures, and daily beverage-control routines.",
   },
 ];
 
-export const caseStudy = {
-  tag: "Core Milestone — Operational Turnaround",
-  title: "Cost optimisation & inventory recovery",
-  intro:
-    "Re-engineering stock control systems to achieve rapid, sustained margin recovery in high volume.",
-  metrics: [
-    { value: "28–30%", label: "Initial beverage cost" },
-    { value: "18–24%", label: "Stabilised target COGS" },
-    { value: "90 days", label: "Timeframe to impact" },
-  ],
-  steps: [
-    {
-      title: "The Challenge",
-      body: "Beverage cost running significantly over target at 28–30% due to peak-volume shrinkage, unrecorded transfers, and delayed reconciliations.",
-    },
-    {
-      title: "The Diagnosis",
-      body: "Conducted deep audits revealing discrepancies between POS register depletions and physical cellar stock across service stations.",
-    },
-    {
-      title: "The Intervention",
-      body: "Implemented digital counting workflows, strict par replenishment protocols, and daily blind audits on high-value SKUs.",
-    },
-    {
-      title: "The Result",
-      body: "Stabilised beverage COGS within the 18–24% benchmark in three months, sustainably protecting bottom-line profitability.",
-    },
+export const careerBreak = {
+  period: "Jan 2026 – Present",
+  title: "Career break and professional development",
+  body: "Continuing a Bachelor of Tourism and Travel Management and professional development in operational reporting and digital tools. Returned to Dubai in August 2026 and currently available for suitable beverage and bar operations opportunities.",
+};
+
+export const operations = {
+  title: "Beverage cost maintained at around 21%.",
+  intro: "At Bla Bla By McGettigan's, I maintained beverage cost through inventory control, variance follow-up, recipe compliance, wastage monitoring, and accurate internal requisitions.",
+  areas: [
+    { title: "Inventory & variance follow-up", body: "Managed stock counts, transfers, internal requisitions, high-value spirit checks, breakage, and wastage; followed up on unusual inventory variances." },
+    { title: "Team coordination & training", body: "Coordinated approximately 20–25 bar team members during peak shifts. Led onboarding, coaching, pre-shift briefings, and performance feedback." },
+    { title: "Rostering & service flow", body: "Planned weekly rosters and adjusted staff deployment around business levels, events, leave, and peak periods. Handled guest recovery with floor, reception, and kitchen teams." },
+    { title: "Costing & menu support", body: "Supported beverage costing, pricing recommendations, recipe development, menu updates, promotions, premium product focus, and upselling initiatives." },
   ],
 };
 
 export const preOpening: { icon: IconType; title: string; body: string }[] = [
-  {
-    icon: ClipboardList,
-    title: "Menu engineering & costing",
-    body: "Concept alignment, recipe standardisation, batching protocols, and gross margin optimisation.",
-  },
-  {
-    icon: Wrench,
-    title: "Station ergonomics & commissioning",
-    body: "Layout planning for speed and workflow, bar equipment stress-testing, and initial par management.",
-  },
-  {
-    icon: Users,
-    title: "Service onboarding & culture",
-    body: "Cocktail masterclasses, luxury service sequences, and hospitality standard implementation.",
-  },
-  {
-    icon: Boxes,
-    title: "Operational SOP architecture",
-    body: "Comprehensive opening/closing SOPs, prep schedules, and variance audit controls drafted pre-launch.",
-  },
+  { icon: Wrench, title: "Equipment & station readiness", body: "Supported equipment readiness and station organisation for pre-opening bar service." },
+  { icon: Boxes, title: "Stock preparation", body: "Supported stock preparation and bar setup to maintain operational readiness." },
+  { icon: GlassWater, title: "Recipe & service standards", body: "Supported recipe standards, service procedures, and consistent beverage preparation." },
+  { icon: ClipboardList, title: "Opening & closing routines", body: "Supported daily opening and closing procedures, stock rotation, and inventory counts." },
 ];
 
-export const competitions: { year: string; title: string; body: string }[] = [
-  {
-    year: "2019",
-    title: "Monkey Shoulder Ultimate Bartender Championship, Dubai",
-    body: "Benchmarked speed, balance, and creativity against Dubai's competitive bar circuit.",
-  },
-  {
-    year: "2017",
-    title: "Max Flair Bartender Challenge, Dubai",
-    body: "Sharpened showmanship, precision pour control, and execution under time pressure.",
-  },
-  {
-    year: "2016",
-    title: "Moscow Mule Competition, Dubai",
-    body: "Refined classic-cocktail consistency and presentation under judged conditions.",
-  },
+export const pillars: { icon: IconType; title: string; body: string }[] = [
+  { icon: Users, title: "Bar operations & shift leadership", body: "Staff deployment, briefings, coaching, and peak-period execution." },
+  { icon: Boxes, title: "Inventory & stock reconciliation", body: "Stock counts, transfers, internal requisitions, and variance follow-up." },
+  { icon: GlassWater, title: "Menu engineering & recipe costing", body: "Support for costing, pricing recommendations, recipe development, and menu updates." },
+  { icon: ClipboardList, title: "SOPs & operational standards", body: "Recipe compliance, opening and closing controls, and service readiness." },
+  { icon: Wrench, title: "Pre-opening operations", body: "Bar setup, station organisation, equipment readiness, and stock preparation." },
+  { icon: Sparkles, title: "Guest experience & recovery", body: "Service recovery, premium product recommendations, and upselling." },
 ];
 
-export const pillars: { icon: IconType; number: string; title: string; body: string }[] = [
-  {
-    icon: Users,
-    number: "01",
-    title: "People & Culture",
-    body: "Team leadership, continuous capability building, role accountability, and service standards.",
-  },
-  {
-    icon: GlassWater,
-    number: "02",
-    title: "Product & Craft",
-    body: "Recipe engineering, high-volume batching standards, consistency protocols, and sensory excellence.",
-  },
-  {
-    icon: Boxes,
-    number: "03",
-    title: "Process & Systems",
-    body: "Dynamic SOPs, station ergonomics, speed-of-service flow, and operational discipline.",
-  },
-  {
-    icon: Building2,
-    number: "04",
-    title: "Stock & Supply Chain",
-    body: "Digital inventory audits, strict par levels, supplier relations, and zero-waste variance control.",
-  },
-  {
-    icon: TrendingUp,
-    number: "05",
-    title: "Profit & Performance",
-    body: "Beverage COGS management (18–24%), yield maximisation, dynamic pricing, and KPI benchmarking.",
-  },
-  {
-    icon: Sparkles,
-    number: "06",
-    title: "Guest Experience",
-    body: "Luxury service sequence, premium beverage upselling, and elevated guest retention.",
-  },
+export const systems = [
+  { name: "Quadranet POS", scope: "Point of sale" },
+  { name: "Odoo Inventory & Purchasing", scope: "Inventory & purchasing" },
+  { name: "Micros/Simphony", scope: "Hospitality system" },
+  { name: "SevenRooms", scope: "Hospitality system" },
+  { name: "Microsoft Excel", scope: "Operational reporting" },
 ];
 
-export const competencies: {
-  icon: IconType;
-  label: string;
-  items: { title: string; body: string }[];
-}[] = [
-  {
-    icon: Users,
-    label: "Leadership at scale",
-    items: [
-      {
-        title: "Talent development & upskilling",
-        body: "Structured recipe testing, speed mechanics, and clear promotional pathways from barback to bartender.",
-      },
-      {
-        title: "Station ownership",
-        body: "Strict station handovers, hygiene rigour, and personal accountability for par readiness.",
-      },
-      {
-        title: "High-volume orchestration",
-        body: "Dynamic shift stationing, pinch-point management, and luxury composure during peak covers.",
-      },
-      {
-        title: "Operational alignment",
-        body: "Digitised shift briefings, recipe consistency audits, and coordinated service-bar workflow.",
-      },
-    ],
-  },
-  {
-    icon: BarChart3,
-    label: "Commercial control",
-    items: [
-      {
-        title: "Beverage COGS governance",
-        body: "Continuous reconciliation of theoretical vs. actual beverage cost across all bars.",
-      },
-      {
-        title: "Audit rigour & shrinkage control",
-        body: "Structured physical inventory cycles, POS depletion auditing, and proactive loss prevention.",
-      },
-      {
-        title: "Procurement & par management",
-        body: "Dynamic par levels based on seasonal covers, disciplined supplier orders, and zero dead-stock holding.",
-      },
-      {
-        title: "Recipe costing & menu engineering",
-        body: "Ingredient yield optimisation, standard pour-cost modelling, and menu profitability matrix analysis.",
-      },
-      {
-        title: "Check-average & spend growth",
-        body: "Floor upselling initiatives, premium spirit positioning, and high-margin cocktail programming.",
-      },
-      {
-        title: "Commercial KPI benchmarking",
-        body: "Tracking category sales velocity, shift wastage logs, and weekly beverage gross profit contribution.",
-      },
-    ],
-  },
+export const digitalOperations = "ChatGPT, Claude and AI-assisted workflows for stock analysis, costing, KPI tracking, SOP documentation and management reporting.";
+
+export const qualifications = [
+  { title: "Bachelor of Tourism & Travel Management (BTTM)", issuer: "Indira Gandhi National Open University (IGNOU), India", status: "In Progress" },
+  { title: "Diploma in Food & Beverage Service", issuer: "Food Craft Institute, Perinthalmanna", status: "2010" },
+  { title: "Certificate in Bartending", issuer: "Flair Mania Bartending Academy, Pune", status: "2013" },
+  { title: 'AI Prompt Engineering, "1 Million Prompters"', issuer: "Dubai Future Foundation / Dubai Centre for Artificial Intelligence", status: "2026" },
 ];
 
-export const digitalTools: {
-  tag: string;
-  category: string;
-  title: string;
-  body: string;
-  image: string;
-  points: string[];
-}[] = [
-  {
-    tag: "Operational prototype",
-    category: "Training & knowledge management",
-    title: "BarBible Interactive",
-    body: "A centralised digital knowledge base and recipe manual built for high-turnover, multi-station bar teams.",
-    image: "/assets/tool-barbible.jpg",
-    points: [
-      "Accelerated onboarding cycles for new bar talent",
-      "Zero recipe drift across multi-outlet service bars",
-      "Real-time specs, glassware standards, and allergen references",
-    ],
-  },
-  {
-    tag: "Proprietary dashboard",
-    category: "Financial & menu engineering",
-    title: "Cocktail Costing & Pricing Engine",
-    body: "An interactive commercial dashboard built to calculate recipe pour costs, model gross margins, and stress-test retail pricing.",
-    image: "/assets/tool-bevcost.jpg",
-    points: [
-      "Ingredient-level cost breakdown with real-time pour cost percentages",
-      "Dynamic gross profit modelling based on live market ingredient pricing",
-      "Menu engineering insights to optimise high-velocity cocktails",
-    ],
-  },
-];
-
-export const aiWorkflow: { icon: IconType; step: string; title: string; body: string }[] = [
-  {
-    icon: Boxes,
-    step: "01",
-    title: "Data ingestion",
-    body: "POS sales logs, daily par sheets, physical stock counts, and supplier pricing indices.",
-  },
-  {
-    icon: Cpu,
-    step: "02",
-    title: "Algorithmic analysis",
-    body: "Pattern recognition, automated variance detection, sales-mix modelling, and waste identification.",
-  },
-  {
-    icon: BrainCircuit,
-    step: "03",
-    title: "Operational insights",
-    body: "Rapid identification of margin leakage, high-velocity SKUs, and shift-level cost trends.",
-  },
-  {
-    icon: Target,
-    step: "04",
-    title: "Executive execution",
-    body: "Targeted stock par adjustments, recipe calibration, team coaching, and decisive leadership.",
-  },
-];
-
-export const aiUseCases: string[] = [
-  "Automated variance reconciliation & depletion auditing",
-  "Dynamic pour-cost & gross margin modelling",
-  "Standardised SOP documentation & multilingual training guides",
-  "Shift beverage sales velocity forecasting",
-];
-
-export const aiNote =
-  "AI accelerates data synthesis; hospitality judgment and operational execution remain human-led.";
-
-export const certification = {
-  label: "Certification",
-  title: "Applied Prompt Engineering & Generative AI Systems",
-  issuer: "Dubai Future Foundation — 1 Million Prompters Programme",
-  body: "Trained in enterprise workflow automation, contextual data reasoning, and advanced prompt architecture for business operations.",
-  image: "/assets/cert-dubai-future-foundation.jpg",
-};
-
-export const roles: { number: string; title: string; scope: string; body: string }[] = [
-  {
-    number: "01",
-    title: "Bar Manager",
-    scope: "High-volume venues & megaclubs",
-    body: "Complete daily operational ownership, shift deployment, guest experience elevation, and service consistency.",
-  },
-  {
-    number: "02",
-    title: "Beverage Operations Manager",
-    scope: "Multi-outlet portfolios & hospitality groups",
-    body: "Comprehensive COGS governance, procurement discipline, automated inventory variance auditing, and cross-outlet standardisation.",
-  },
-  {
-    number: "03",
-    title: "Pre-Opening & Operations Specialist",
-    scope: "New concept launches & turnarounds",
-    body: "Station commissioning, menu engineering, luxury SOP architecture, and rapid staff training from ground zero to launch.",
-  },
-];
+export const languages = ["English — Professional", "Hindi — Professional", "Malayalam — Native"];
+export const roles = ["Assistant Bar Manager", "Head Bartender", "Bar Supervisor"];
 
 export const contact = {
-  heading: "Let's talk beverage operations.",
-  body: "Available for strategic beverage leadership, venue operations management, and concept pre-openings across the UAE and wider GCC.",
+  heading: "Let's talk bar operations.",
+  body: "Immediately available in Dubai for Assistant Bar Manager, Head Bartender, and Bar Supervisor opportunities.",
   cv: "/assets/Ashraf_Yousef_CV.pdf",
 };
 
-export const contactLinks: {
-  icon: IconType;
-  label: string;
-  value: string;
-  href: string;
-  external?: boolean;
-}[] = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "ashrafkypallam@gmail.com",
-    href: "mailto:ashrafkypallam@gmail.com",
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+971 52 588 6326",
-    href: "tel:+971525886326",
-  },
-  {
-    icon: MessageCircle,
-    label: "WhatsApp",
-    value: "Message directly",
-    href: "https://wa.me/971525886326",
-    external: true,
-  },
-  {
-    icon: LinkedInIcon,
-    label: "LinkedIn",
-    value: "/in/ashrafkyousef123",
-    href: "https://www.linkedin.com/in/ashrafkyousef123/",
-    external: true,
-  },
-  {
-    icon: MapPin,
-    label: "Based in",
-    value: "Dubai, United Arab Emirates",
-    href: "https://maps.google.com/?q=Dubai,United+Arab+Emirates",
-    external: true,
-  },
+export const contactLinks: { icon: IconType; label: string; value: string; href: string; external?: boolean }[] = [
+  { icon: Mail, label: "Email", value: "ashrafkypallam@gmail.com", href: "mailto:ashrafkypallam@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+971 52 588 6326", href: "tel:+971525886326" },
+  { icon: MessageCircle, label: "WhatsApp", value: "Message directly", href: "https://wa.me/971525886326", external: true },
+  { icon: LinkedInIcon, label: "LinkedIn", value: "/in/ashrafkyousef123", href: "https://www.linkedin.com/in/ashrafkyousef123/", external: true },
+  { icon: MapPin, label: "Based in", value: "Dubai, United Arab Emirates", href: "https://maps.google.com/?q=Dubai,United+Arab+Emirates", external: true },
 ];
-
-export const trophyIcon = Trophy;

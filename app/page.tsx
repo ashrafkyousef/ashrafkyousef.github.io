@@ -4,22 +4,26 @@ import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
 import Nav from "@/components/Nav";
 import Skills from "@/components/Skills";
+import Results from "@/components/Results";
+import Tools from "@/components/Tools";
 
 export default function Home() {
   return (
     <>
       <a
-        href="#about"
+        href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-amber focus:px-5 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-ink"
       >
         Skip to content
       </a>
       <Nav />
-      <main>
+      <main id="main" tabIndex={-1}>
         <Hero />
-        <About />
+        <Results />
         <Experience />
+        <Tools />
         <Skills />
+        <About />
         <Contact />
       </main>
     </>

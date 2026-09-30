@@ -9,6 +9,6 @@ type ImgProps = Omit<ImageProps, "src"> & { src: string };
  * "/assets/x.jpg" src ships unprefixed and 404s under a project-page
  * deployment. Prefix local sources here so every call site gets it right.
  */
-export default function Img({ src, ...props }: ImgProps) {
-  return <Image src={withBasePath(src)} {...props} />;
+export default function Img({ src, alt, ...props }: ImgProps) {
+  return <Image src={withBasePath(src)} alt={alt} {...props} />;
 }

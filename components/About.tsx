@@ -1,14 +1,14 @@
 import Img from "./Img";
 import { Quote } from "lucide-react";
-import { about, roles } from "@/lib/content";
+import { about } from "@/lib/content";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
 export default function About() {
   return (
-    <section id="about" className="scroll-mt-24 py-20 sm:py-28">
+    <section id="about" className="section-space border-t border-line-soft">
       <div className="container-page">
-        <SectionHeading eyebrow="About me" title={about.heading} />
+        <SectionHeading eyebrow="About me / 05" title={about.heading} />
 
         <div className="mt-14 grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-16">
           <Reveal className="space-y-5">
@@ -54,30 +54,6 @@ export default function About() {
           </Reveal>
         </div>
 
-        {/* What I'm looking for next */}
-        <div className="mt-20">
-          <Reveal>
-            <h3 className="text-[0.7rem] font-medium uppercase tracking-[0.22em] text-paper-faint">
-              Open to
-            </h3>
-          </Reveal>
-          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {roles.map((role, i) => (
-              <li key={role.title}>
-                <Reveal delay={i * 80}>
-                  <div className="group h-full rounded-2xl border border-line-soft bg-surface/50 p-6 transition-colors hover:border-amber/30 hover:bg-surface">
-                    <span className="font-display text-sm text-amber/70">{role.number}</span>
-                    <h4 className="mt-2 font-display text-xl text-paper">{role.title}</h4>
-                    <p className="mt-1 text-[0.8rem] uppercase tracking-[0.12em] text-paper-faint">
-                      {role.scope}
-                    </p>
-                    <p className="mt-4 text-sm leading-relaxed text-paper-dim">{role.body}</p>
-                  </div>
-                </Reveal>
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
     </section>
   );

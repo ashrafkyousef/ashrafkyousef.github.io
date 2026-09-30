@@ -15,7 +15,7 @@
   /* Text */
   --color-paper: #f4efe8;
   --color-paper-dim: #b6adb9;
-  --color-paper-faint: #7d7484;
+  --color-paper-faint: #a49bab;
 
   /* Hairlines */
   --color-line: rgba(244, 239, 232, 0.1);
@@ -91,29 +91,7 @@
   }
 }
 
-/* Scroll-reveal — visible by default so content never depends on JS */
-.reveal {
-  opacity: 1;
-}
-
-.js .reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.js .reveal[data-visible="true"] {
-  opacity: 1;
-  transform: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .js .reveal {
-    opacity: 1;
-    transform: none;
-  }
-}
+.reveal { opacity: 1; }
 
 @keyframes marquee-scroll {
   from { transform: translateX(0); }
@@ -128,4 +106,65 @@
   .animate-marquee {
     animation: none;
   }
+}
+
+/* Shared controls and spacing keep the reading rhythm consistent. */
+@utility section-space {
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+  scroll-margin-top: 0;
+}
+@utility eyebrow {
+  color: var(--color-amber-soft);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+@utility button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3rem;
+  border-radius: 999px;
+  padding: 0.8rem 1.4rem;
+  background: var(--color-amber);
+  color: var(--color-ink);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background-color 160ms;
+  &:hover { background: var(--color-amber-soft); }
+}
+@utility button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 3rem;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  padding: 0.8rem 1.4rem;
+  color: var(--color-paper);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: border-color 160ms;
+  &:hover { border-color: var(--color-amber); }
+}
+.details-panel {
+  border: 1px solid var(--color-line);
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--color-surface);
+}
+.details-panel summary {
+  cursor: pointer;
+  min-height: 2rem;
+  color: var(--color-paper);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.details-panel summary::marker { color: var(--color-amber); }
+@media (max-width: 479px) {
+  .hero-portrait { max-width: 17rem; }
+  .container-page { padding-inline: 1.25rem; }
 }

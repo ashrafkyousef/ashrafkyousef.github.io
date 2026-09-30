@@ -15,9 +15,9 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ashrafkypallam-cloud.github.io";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ashrafkyousef.github.io";
 const description =
-  "Ashraf K Yousef — Assistant Bar Manager in Dubai with 11+ years UAE hospitality experience. Beverage cost control, team leadership, digital tools and AI-driven operational analysis.";
+  "Ashraf K Yousef — Assistant Bar Manager in Dubai with 11 years UAE hospitality experience. Beverage operations, bar leadership, inventory control and guest service. Open to Assistant Bar Manager, Head Bartender and Bar Supervisor roles.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -25,7 +25,9 @@ export const metadata: Metadata = {
   description,
   authors: [{ name: "Ashraf K Yousef" }],
   keywords: [
-    "bar manager Dubai",
+    "Assistant Bar Manager Dubai",
+    "Head Bartender Dubai",
+    "Bar Supervisor Dubai",
     "beverage operations",
     "beverage COGS",
     "pre-opening bar",
@@ -37,10 +39,10 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "Ashraf K Yousef — Assistant Bar Manager",
     description:
-      "11+ years UAE hospitality experience. Beverage cost control, team leadership, digital tools and AI-driven operations — Dubai, UAE.",
+      "11 years UAE hospitality experience. Beverage cost around 21%, coordinating approximately 20–25 bar team members during peak shifts — Dubai, UAE.",
     images: [
       {
-        url: "/assets/og-image.jpg",
+        url: "/assets/cv-aligned-social.png",
         width: 1200,
         height: 630,
         alt: "Ashraf K Yousef — Assistant Bar Manager, Dubai",
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ashraf K Yousef — Assistant Bar Manager",
     description,
-    images: ["/assets/twitter-image.jpg"],
+    images: ["/assets/cv-aligned-social.png"],
   },
 };
 
@@ -85,16 +87,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
-      suppressHydrationWarning
     >
       <head>
-        {/* Marks JS as available so scroll-reveal can hide content; without JS
-            everything stays visible. Runs before paint to avoid a flash. */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `document.documentElement.classList.add("js")`,
-          }}
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}

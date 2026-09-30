@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { navLinks, profile } from "@/lib/content";
 
 export default function Nav() {
+  const menuButton = useRef<HTMLButtonElement>(null);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string>("");
@@ -36,11 +37,22 @@ export default function Nav() {
     return () => observer.disconnect();
   }, []);
 
-  // Lock body scroll behind the mobile sheet.
+  // A disclosure menu keeps the page keyboard-accessible without a modal trap.
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    if (!open) return;
+    const dismiss = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        menuButton.current?.focus();
+      }
+    };
+    const media = window.matchMedia("(min-width: 768px)");
+    const onResize = () => { if (media.matches) setOpen(false); };
+    window.addEventListener("keydown", dismiss);
+    media.addEventListener("change", onResize);
     return () => {
-      document.body.style.overflow = "";
+      window.removeEventListener("keydown", dismiss);
+      media.removeEventListener("change", onResize);
     };
   }, [open]);
 
@@ -54,10 +66,12 @@ export default function Nav() {
     >
       <nav
         aria-label="Primary"
-        className="container-page flex h-[4.5rem] items-center justify-between gap-6"
+        className="container-page flex h-[4.5rem] items-center justify-between gap-3"
       >
         <a
           href="#top"
+          aria-label={`${profile.name} — back to top`}
+          onClick={() => setOpen(false)}
           className="group flex items-center gap-2.5 text-sm font-medium tracking-tight text-paper"
         >
           <span
@@ -66,7 +80,7 @@ export default function Nav() {
           >
             AY
           </span>
-          <span className="hidden sm:inline">{profile.name}</span>
+          <span className="text-xs sm:text-sm">{profile.name}</span>
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">
@@ -74,6 +88,7 @@ export default function Nav() {
             <li key={link.href}>
               <a
                 href={link.href}
+                aria-current={active === link.href ? "location" : undefined}
                 className={`rounded-full px-4 py-2 text-sm transition-colors ${
                   active === link.href
                     ? "text-amber"
@@ -94,12 +109,13 @@ export default function Nav() {
             Get in touch
           </a>
           <button
+            ref={menuButton}
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
-            className="grid h-10 w-10 place-items-center rounded-full border border-line text-paper transition-colors hover:bg-surface md:hidden"
+            className="grid h-11 w-11 place-items-center rounded-full border border-line text-paper transition-colors hover:bg-surface md:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
