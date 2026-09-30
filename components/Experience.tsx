@@ -1,56 +1,30 @@
-import { careerBreak, preOpening, timeline } from "@/lib/content";
-import Reveal from "./Reveal";
+import { careerBreak, latestResponsibilities, timeline } from "@/lib/content";
 import SectionHeading from "./SectionHeading";
 
 export default function Experience() {
+  const [blaBla, ...earlierVenues] = timeline;
+  const progression = blaBla.progression!;
+  const latest = progression[progression.length - 1];
   return (
     <section id="experience" className="section-space border-t border-line-soft bg-ink-2/60">
       <div className="container-page">
-        <SectionHeading eyebrow="Experience / 02" title="Built on the floor. Grown through leadership." lede="11 years of UAE hospitality experience across high-volume lifestyle venues, luxury hotels, and premium dining operations." />
-        <ol className="mt-10">
-          {timeline.map((entry) => (
-            <li key={entry.venue}>
-              <Reveal>
-                <article className="grid gap-4 border-t border-line py-8 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-8">
-                  <p className="font-mono text-xs uppercase tracking-wide text-paper-dim">{entry.period}</p>
-                  <div>
-                    <div className="flex flex-wrap items-baseline gap-3">
-                      <h3 className="text-xl text-paper sm:text-2xl">{entry.venue}</h3>
-                      {entry.mostRecent && <span className="rounded-full border border-amber/35 px-3 py-1 text-xs text-amber">Most recent employment</span>}
-                    </div>
-                    <p className="mt-2 text-sm font-medium text-amber-soft">{entry.role}</p>
-                    <p className="mt-3 max-w-3xl text-sm leading-relaxed text-paper-dim">{entry.description}</p>
-                    {entry.progression && (
-                      <ol className="mt-6 space-y-5 border-l border-amber/30 pl-5">
-                        {entry.progression.map((step) => (
-                          <li key={step.role}>
-                            <p className="font-mono text-xs text-paper-dim">{step.period}</p>
-                            <h4 className="mt-1 text-base font-medium text-paper">{step.role}</h4>
-                            <p className="mt-2 max-w-3xl text-sm leading-relaxed text-paper-dim">{step.body}</p>
-                          </li>
-                        ))}
-                      </ol>
-                    )}
-                  </div>
-                </article>
-              </Reveal>
-            </li>
-          ))}
-        </ol>
-        <article className="mt-6 rounded-2xl border border-line bg-surface/50 p-6 sm:p-8">
-          <p className="eyebrow">{careerBreak.period}</p>
-          <h3 className="mt-3 text-xl text-paper">{careerBreak.title}</h3>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-paper-dim">{careerBreak.body}</p>
+        <SectionHeading eyebrow="Experience / 01" title="From bartender to bar leadership." />
+        <article id="results" className="mt-9 overflow-hidden rounded-2xl border border-amber/25 bg-surface/60">
+          <div className="p-6 sm:p-8">
+            <div className="flex flex-wrap items-center justify-between gap-3"><p className="eyebrow">Most recent employment</p><p className="font-mono text-xs text-paper-dim">{latest.period}</p></div>
+            <h3 className="mt-4 text-3xl text-paper">{latest.role}</h3>
+            <p className="mt-2 text-base text-amber-soft">{blaBla.venue}</p>
+            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-paper-dim">{latest.body}</p>
+            <ul className="mt-6 grid gap-x-10 gap-y-5 sm:grid-cols-2">{latestResponsibilities.map((item) => <li key={item.title}><h4 className="text-sm font-semibold text-paper">{item.title}</h4><p className="mt-1.5 text-sm leading-relaxed text-paper-dim">{item.body}</p></li>)}</ul>
+          </div>
+          <div className="border-t border-line bg-ink-2/70 p-6 sm:px-8">
+            <p className="text-xs uppercase tracking-wider text-paper-faint">Progression at Bla Bla · {blaBla.period}</p>
+            <p className="mt-2 text-sm text-amber-soft">{blaBla.role}</p>
+            <div className="mt-5 grid gap-5 sm:grid-cols-2">{[...progression.slice(0,-1)].reverse().map((step) => <div key={step.role}><p className="font-mono text-xs text-paper-faint">{step.period}</p><h4 className="mt-1 text-sm font-medium text-paper">{step.role}</h4><p className="mt-2 text-sm text-paper-dim">{step.body}</p></div>)}</div>
+          </div>
         </article>
-        <details className="details-panel mt-6">
-          <summary>Pre-opening exposure · Bla Bla, Nara & Tasca</summary>
-          <ul className="mt-6 grid gap-6 sm:grid-cols-2">
-            {preOpening.map((item) => {
-              const Icon = item.icon;
-              return <li key={item.title}><Icon aria-hidden="true" className="h-[22px] w-[22px] text-amber" /><h4 className="mt-3 font-medium text-paper">{item.title}</h4><p className="mt-2 text-sm text-paper-dim">{item.body}</p></li>;
-            })}
-          </ul>
-        </details>
+        <ol className="mt-6 grid gap-5 lg:grid-cols-3">{earlierVenues.map((entry) => <li key={entry.venue} className="rounded-2xl border border-line p-6"><p className="font-mono text-xs text-paper-faint">{entry.period}</p><h3 className="mt-4 text-xl text-paper">{entry.role}</h3><p className="mt-3 text-sm font-medium text-amber-soft">{entry.venue}</p><p className="mt-3 text-sm leading-relaxed text-paper-dim">{entry.description}</p></li>)}</ol>
+        <div className="mt-6 border-l-2 border-amber/40 py-1 pl-5"><p className="eyebrow">{careerBreak.period}</p><h3 className="mt-2 text-xl text-paper">{careerBreak.title}</h3><p className="mt-3 max-w-4xl text-sm leading-relaxed text-paper-dim">{careerBreak.body}</p></div>
       </div>
     </section>
   );

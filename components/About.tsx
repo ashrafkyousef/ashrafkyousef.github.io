@@ -8,9 +8,9 @@ export default function About() {
   return (
     <section id="about" className="section-space border-t border-line-soft">
       <div className="container-page">
-        <SectionHeading eyebrow="About me / 05" title={about.heading} />
+        <SectionHeading eyebrow="Working approach / 04" title={about.heading} />
 
-        <div className="mt-14 grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-16">
+        <div className="mt-9 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:gap-16">
           <Reveal className="space-y-5">
             {about.paragraphs.map((paragraph) => (
               <p
@@ -21,7 +21,7 @@ export default function About() {
               </p>
             ))}
 
-            <figure className="!mt-9 rounded-2xl border border-line-soft bg-surface/60 p-6 sm:p-7">
+            <figure className="!mt-6 rounded-2xl border border-line-soft bg-surface/60 p-6 sm:p-7">
               <Quote aria-hidden="true" className="h-6 w-6 text-amber/60" />
               <blockquote className="mt-3 font-display text-xl leading-snug text-paper sm:text-[1.4rem]">
                 &ldquo;{about.philosophy}&rdquo;

@@ -32,10 +32,10 @@ components/
   Nav.tsx        Sticky header, scroll-spy, mobile sheet   (client)
   Hero.tsx       Introduction, CV link, stats, venue logos
   About.tsx      Short bio and working philosophy
-  Results.tsx    CV-aligned beverage cost and operational responsibilities
-  Experience.tsx Exact role dates, career break and pre-opening exposure
-  Tools.tsx      Hospitality systems and digital operations
-  Skills.tsx     Core skills, education, certifications and languages
+  Experience.tsx Latest role first, career progression and career break
+  Tools.tsx      Compact hospitality systems and digital operations
+  Skills.tsx     Systems, education, certifications and languages
+  WorkSample.tsx Interactive stock reconciliation demonstration
   Contact.tsx    Contact links, CTA, footer
   Reveal.tsx     Server-rendered content wrapper
   icons.tsx      LinkedIn glyph (lucide v1 dropped brand marks)
@@ -89,3 +89,12 @@ Do not reintroduce unsupported commercial ownership, staff totals, turnaround
 metrics, supplier negotiation, budget ownership, competition claims or project
 outcomes. Education, systems and responsibilities must remain grounded in the CV.
 The social preview uses `public/assets/cv-aligned-social.png`.
+
+## Illustrative work sample
+
+The stock-reconciliation example uses fictional figures and is explicitly labelled
+as a demonstration. It is not an employer result or an additional career claim.
+All figures refer to one product and period in bottle equivalents; sales and
+recorded waste are a combined depletion input. Values are nonnegative and accept
+up to two decimal places. Integer hundredths avoid floating-point variance.
+The calculator has no backend, storage, or transmission of entered figures.

@@ -1,6 +1,5 @@
 import {
-  Boxes, ClipboardList, GlassWater, Mail, MapPin, MessageCircle,
-  Phone, Sparkles, Users, Wrench,
+  Mail, MapPin, MessageCircle, Phone,
 } from "lucide-react";
 import { LinkedInIcon, type IconType } from "@/components/icons";
 
@@ -11,7 +10,7 @@ export const profile = {
   discipline: "Beverage Operations | Bar Leadership",
   location: "Dubai, UAE",
   hook: "Hands-on service. Clear standards. Strong teams.",
-  summary: "Assistant Bar Manager with 11 years of UAE hospitality experience across high-volume lifestyle venues, luxury hotels, and premium dining operations. Experienced in bar operations, team leadership, beverage cost control, inventory management, staff training, and guest recovery.",
+  summary: "11 years of UAE hospitality experience across high-volume lifestyle venues, luxury hotels, and premium dining. Hands-on experience in team coordination, beverage cost control, and guest recovery.",
   availability: "Immediately available · Dubai, UAE",
   portrait: "/assets/portrait.jpg",
 };
@@ -23,11 +22,10 @@ export const stats = [
 ];
 
 export const navLinks = [
-  { href: "#results", label: "Bar operations" },
   { href: "#experience", label: "Experience" },
-  { href: "#tools", label: "Systems" },
+  { href: "#work-sample", label: "Work sample" },
   { href: "#skills", label: "Qualifications" },
-  { href: "#about", label: "About" },
+  { href: "#about", label: "Approach" },
 ];
 
 export const venues = [
@@ -38,10 +36,9 @@ export const venues = [
 ];
 
 export const about = {
-  heading: "Bar craft, built into everyday leadership.",
+  heading: "Prepared teams. Consistent service.",
   paragraphs: [
-    "My experience spans hotel bars, luxury desert dining, pre-opening teams, and high-volume lifestyle venues in Dubai. At Bla Bla By McGettigan's, I progressed from Bartender to Floor Supervisor to Assistant Bar Manager.",
-    "I focus on the details that keep service running: clear briefings, well-prepared stations, consistent recipes, accurate stock records, and practical team coaching. I work closely with floor, reception, and kitchen teams to resolve problems and support the guest experience.",
+    "A good shift starts with a prepared team and clear standards. My approach combines practical bar experience with coaching, stock discipline, and close coordination with floor, reception, and kitchen teams.",
   ],
   philosophy: "Own your station. Own your standards. Own your results.",
   image: "/assets/action-photo.jpg",
@@ -66,15 +63,15 @@ export const timeline: TimelineEntry[] = [
     progression: [
       {
         period: "Jan 2021 – Oct 2021", role: "Bartender · Pre-Opening",
-        body: "Prepared and served beverages to standard recipes and portion controls. Maintained mise-en-place, stock replenishment, and equipment readiness; supported stock counts and opening and closing routines.",
+        body: "Pre-opening beverage service, mise-en-place, stock replenishment, and opening and closing routines.",
       },
       {
         period: "Oct 2021 – Nov 2022", role: "Floor Supervisor",
-        body: "Supervised floor operations across two outlets, including staff deployment, section allocation, service flow, guest recovery, and team breaks. Led briefings and supported shift handovers and staff coaching; took additional floor responsibility when the Floor Manager was unavailable.",
+        body: "Supervised floor operations across two outlets, coordinating staff deployment, service flow, briefings, and guest recovery.",
       },
       {
         period: "Nov 2022 – Dec 2025", role: "Assistant Bar Manager",
-        body: "Supported daily bar operations, coordinating approximately 20–25 bar team members during peak shifts. Maintained beverage cost at around 21%; led training and briefings, managed stock controls, planned weekly rosters, supported costing and pricing recommendations, and handled guest recovery.",
+        body: "Supported daily high-volume bar operations, with responsibilities spanning team coordination, beverage cost control, training, and guest recovery.",
       },
     ],
   },
@@ -82,19 +79,19 @@ export const timeline: TimelineEntry[] = [
     period: "Dec 2019 – Mar 2020",
     venue: "Nara Desert Escape, Dubai, UAE",
     role: "Head Bartender · Pre-Opening",
-    description: "Supported pre-opening bar setup, equipment readiness, stock preparation, recipe standards, and service procedures. Led day-to-day bar operations for luxury desert dining and private events; managed stock levels, internal requisitions, par levels, rotation, and wastage control.",
+    description: "Supported pre-opening setup and led day-to-day bar operations for luxury desert dining and private events, including stock levels, requisitions, and wastage control.",
   },
   {
     period: "Jan 2019 – Nov 2019",
     venue: "Tasca by José Avillez, Mandarin Oriental Jumeira, Dubai, UAE",
     role: "Bartender · Pre-Opening",
-    description: "Supported bar setup, station organisation, equipment readiness, stock preparation, and service standards. Prepared beverages to recipe specifications and luxury service expectations; supported inventory counts, stock rotation, and opening and closing procedures.",
+    description: "Supported pre-opening bar setup and luxury beverage service, maintaining recipe standards, station readiness, stock rotation, and inventory counts.",
   },
   {
     period: "Feb 2015 – Nov 2018",
     venue: "Radisson Blu Hotel Dubai Media City, Dubai, UAE",
     role: "Bartender",
-    description: "Prepared and served beverages across Icon Bar and Tamanya Goes Thai. Maintained mise-en-place, cleanliness, stock replenishment, and equipment readiness; supported inventory counts, stock rotation, opening and closing procedures, and daily beverage-control routines.",
+    description: "Served beverages across Icon Bar and Tamanya Goes Thai, maintaining bar readiness and supporting stock counts, rotation, and daily beverage-control routines.",
   },
 ];
 
@@ -104,31 +101,11 @@ export const careerBreak = {
   body: "Continuing a Bachelor of Tourism and Travel Management and professional development in operational reporting and digital tools. Returned to Dubai in August 2026 and currently available for suitable beverage and bar operations opportunities.",
 };
 
-export const operations = {
-  title: "Beverage cost maintained at around 21%.",
-  intro: "At Bla Bla By McGettigan's, I maintained beverage cost through inventory control, variance follow-up, recipe compliance, wastage monitoring, and accurate internal requisitions.",
-  areas: [
-    { title: "Inventory & variance follow-up", body: "Managed stock counts, transfers, internal requisitions, high-value spirit checks, breakage, and wastage; followed up on unusual inventory variances." },
-    { title: "Team coordination & training", body: "Coordinated approximately 20–25 bar team members during peak shifts. Led onboarding, coaching, pre-shift briefings, and performance feedback." },
-    { title: "Rostering & service flow", body: "Planned weekly rosters and adjusted staff deployment around business levels, events, leave, and peak periods. Handled guest recovery with floor, reception, and kitchen teams." },
-    { title: "Costing & menu support", body: "Supported beverage costing, pricing recommendations, recipe development, menu updates, promotions, premium product focus, and upselling initiatives." },
-  ],
-};
-
-export const preOpening: { icon: IconType; title: string; body: string }[] = [
-  { icon: Wrench, title: "Equipment & station readiness", body: "Supported equipment readiness and station organisation for pre-opening bar service." },
-  { icon: Boxes, title: "Stock preparation", body: "Supported stock preparation and bar setup to maintain operational readiness." },
-  { icon: GlassWater, title: "Recipe & service standards", body: "Supported recipe standards, service procedures, and consistent beverage preparation." },
-  { icon: ClipboardList, title: "Opening & closing routines", body: "Supported daily opening and closing procedures, stock rotation, and inventory counts." },
-];
-
-export const pillars: { icon: IconType; title: string; body: string }[] = [
-  { icon: Users, title: "Bar operations & shift leadership", body: "Staff deployment, briefings, coaching, and peak-period execution." },
-  { icon: Boxes, title: "Inventory & stock reconciliation", body: "Stock counts, transfers, internal requisitions, and variance follow-up." },
-  { icon: GlassWater, title: "Menu engineering & recipe costing", body: "Support for costing, pricing recommendations, recipe development, and menu updates." },
-  { icon: ClipboardList, title: "SOPs & operational standards", body: "Recipe compliance, opening and closing controls, and service readiness." },
-  { icon: Wrench, title: "Pre-opening operations", body: "Bar setup, station organisation, equipment readiness, and stock preparation." },
-  { icon: Sparkles, title: "Guest experience & recovery", body: "Service recovery, premium product recommendations, and upselling." },
+export const latestResponsibilities = [
+  { title: "Cost & stock control", body: "Managed counts, transfers, requisitions, high-value spirit checks, wastage, and variance follow-up." },
+  { title: "People & shift planning", body: "Led onboarding, coaching, and briefings; planned weekly rosters and adjusted staff deployment." },
+  { title: "Menu & pricing support", body: "Supported recipe development, costing, pricing recommendations, menu updates, and upselling." },
+  { title: "Guest recovery", body: "Resolved service issues in close coordination with floor, reception, and kitchen teams." },
 ];
 
 export const systems = [

@@ -1,104 +1,25 @@
-import { ArrowUpRight, Download } from "lucide-react";
-import { contact, contactLinks, profile, roles } from "@/lib/content";
+import { ArrowUpRight, Download, Mail, MessageCircle } from "lucide-react";
+import { contact, profile } from "@/lib/content";
 import { withBasePath } from "@/lib/basePath";
-import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
 export default function Contact() {
   return (
-    <section
-      id="contact"
-      className="relative section-space overflow-hidden border-t border-line-soft bg-ink-2/60"
-    >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-96 bg-[radial-gradient(55%_70%_at_50%_100%,rgba(217,154,78,0.14),transparent_70%)]"
-      />
-
-      <div className="container-page relative">
-        <SectionHeading
-          eyebrow="Contact"
-          title={contact.heading}
-          lede={contact.body}
-        />
-
-        <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] lg:gap-16">
-          <ul className="grid gap-px overflow-hidden rounded-2xl border border-line-soft bg-line-soft">
-            {contactLinks.map((link, i) => {
-              const Icon = link.icon;
-              return (
-                <li key={link.label} className="bg-ink-2">
-                  <Reveal delay={i * 55}>
-                    <a
-                      href={link.href}
-                      {...(link.external
-                        ? { target: "_blank", rel: "noopener noreferrer" }
-                        : {})}
-                      className="group flex items-center gap-4 px-5 py-4 transition-colors hover:bg-surface sm:px-6 sm:py-5"
-                    >
-                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-line bg-surface/70 text-amber transition-colors group-hover:border-amber/40">
-                        <Icon className="h-[1.05rem] w-[1.05rem]" />
-                      </span>
-                      <span className="min-w-0 flex-1">
-                        <span className="block text-[0.7rem] uppercase tracking-[0.16em] text-paper-faint">
-                          {link.label}
-                        </span>
-                        <span className="mt-0.5 block break-words text-[0.95rem] text-paper transition-colors group-hover:text-amber">
-                          {link.value}
-                        </span>
-                      </span>
-                      <ArrowUpRight
-                        aria-hidden="true"
-                        className="h-4 w-4 shrink-0 text-paper-faint transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-amber"
-                      />
-                    </a>
-                  </Reveal>
-                </li>
-              );
-            })}
-          </ul>
-
-          <Reveal delay={140}>
-            <div className="flex h-full flex-col justify-between gap-8 rounded-2xl border border-amber/20 bg-gradient-to-br from-surface to-ink-2 p-7 sm:p-8">
-              <div>
-                <p className="font-display text-2xl leading-snug text-paper sm:text-[1.6rem]">
-                  Available for your next bar team.
-                </p>
-                <p className="mt-4 text-[0.95rem] leading-relaxed text-paper-dim">
-                  Hands-on bar operations, team coordination, cost control, and guest service.
-                </p>
-                <ul className="mt-5 space-y-2 text-sm text-amber-soft">
-                  {roles.map((role) => <li key={role}>{role}</li>)}
-                </ul>
-              </div>
-
-              <div className="flex flex-col gap-3 xs:flex-row">
-                <a
-                  href="mailto:ashrafkypallam@gmail.com"
-                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-amber px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-amber-soft"
-                >
-                  Email me
-                  <ArrowUpRight className="h-4 w-4" />
-                </a>
-                <a
-                  href={withBasePath(contact.cv)}
-                  download
-                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-medium text-paper transition-colors hover:border-amber/45 hover:bg-surface"
-                >
-                  <Download className="h-4 w-4" />
-                  Download CV
-                </a>
-              </div>
-            </div>
-          </Reveal>
+    <section id="contact" className="section-space border-t border-amber/20 bg-[radial-gradient(ellipse_at_50%_100%,rgba(217,154,78,0.10),transparent_70%)]">
+      <div className="container-page">
+        <SectionHeading eyebrow="Contact" title="Let’s talk about your bar team." lede={contact.body} />
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a href="mailto:ashrafkypallam@gmail.com" className="button-primary"><Mail aria-hidden="true" size={17} />Email Ashraf</a>
+          <a href="https://wa.me/971525886326" target="_blank" rel="noopener noreferrer" className="button-secondary"><MessageCircle aria-hidden="true" size={17} />WhatsApp<span className="sr-only"> (opens in a new tab)</span></a>
+          <a href={withBasePath(contact.cv)} download className="button-secondary"><Download aria-hidden="true" size={17} />Download CV</a>
         </div>
+        <div className="mt-6 flex flex-wrap gap-x-7 gap-y-2 text-sm text-paper-dim">
+          <a href="tel:+971525886326" className="inline-flex min-h-11 items-center hover:text-amber">+971 52 588 6326</a>
+          <a href="mailto:ashrafkypallam@gmail.com" className="inline-flex min-h-11 items-center break-all hover:text-amber">ashrafkypallam@gmail.com</a>
+          <a href="https://www.linkedin.com/in/ashrafkyousef123/" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 hover:text-amber">LinkedIn<ArrowUpRight aria-hidden="true" size={15} /><span className="sr-only"> (opens in a new tab)</span></a>
+        </div>
+        <footer className="mt-10 border-t border-line pt-6 text-xs text-paper-faint">{profile.name} · {profile.role} · {profile.location}</footer>
       </div>
-
-      <footer className="container-page relative mt-20 border-t border-line-soft pt-8">
-        <p className="text-center text-[0.8rem] text-paper-faint">
-          {profile.name} — {profile.role}, {profile.location}
-        </p>
-      </footer>
     </section>
   );
 }

@@ -4,8 +4,7 @@ import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
 import Nav from "@/components/Nav";
 import Skills from "@/components/Skills";
-import Results from "@/components/Results";
-import Tools from "@/components/Tools";
+import WorkSample from "@/components/WorkSample";
 
 export default function Home() {
   return (
@@ -19,9 +18,8 @@ export default function Home() {
       <Nav />
       <main id="main" tabIndex={-1}>
         <Hero />
-        <Results />
         <Experience />
-        <Tools />
+        <WorkSample />
         <Skills />
         <About />
         <Contact />
